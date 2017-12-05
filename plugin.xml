@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-ibm-applaunch" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>IBMAppLaunch</name>
+    <js-module name="IBMAppLaunch" src="www/IBMAppLaunch.js">
+        <clobbers target="cordova.plugins.IBMAppLaunch" />
+    </js-module>
+
+     <platform name="android">
+        <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
+        <framework src="com.android.support:appcompat-v7:23.2.1" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        </config-file>
+
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="AppLaunchPlugin">
+                <param name="android-package" value="com.ibm.mobile.applaunch.android.cdvplugin.CDVAppLaunch" />
+            </feature>
+        </config-file>
+
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/CDVAppLaunch.java"   target-dir="src/com/ibm/mobile/applaunch/android/cdvplugin/push" />
+    </platform>
+</plugin>
