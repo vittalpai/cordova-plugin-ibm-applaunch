@@ -3,11 +3,6 @@ if (!project.hasProperty('cdvMinSdkVersion') || cdvMinSdkVersion < 15) {
     ext.cdvMinSdkVersion = 15;
 }
 
-// For Push SDK, SDK version must be at least 23
-if (!project.hasProperty('cdvCompileSdkVersion') || cdvCompileSdkVersion < 23) {
-    ext.cdvCompileSdkVersion = 23;
-}
-
 android {    
      packagingOptions {
         exclude 'META-INF/LICENSE'
@@ -18,7 +13,7 @@ android {
 // Include IBMAppLaunch Android Native SDK dependency
 dependencies {
 
-    compile group: 'com.github.ibm-bluemix-mobile-services:bms-clientsdk-android-applaunch',
+    compile group: 'com.github.ibm-bluemix-mobile-services',
             name: 'bms-clientsdk-android-applaunch',
             version: '0.0.+',
             ext: 'aar',

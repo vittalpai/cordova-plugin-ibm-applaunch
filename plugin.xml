@@ -22,6 +22,6 @@
         </config-file>
 
         <config-file parent="/*" target="AndroidManifest.xml" />
-        <source-file src="src/android/CDVAppLaunch.java"   target-dir="src/com/ibm/mobile/applaunch/android/cdvplugin/push" />
+        <source-file src="src/android/CDVAppLaunch.java"   target-dir="src/com/ibm/mobile/applaunch/android/cdvplugin" />
     </platform>
 </plugin>
